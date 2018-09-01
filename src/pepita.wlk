@@ -1,9 +1,10 @@
 import ciudades.*
+import comidas.*
+import roque.*
 
 object pepita {
 	var property energia = 100
-	var property ciudad = buenosAires 
-
+	var property ciudad = null
 	var property posicion = game.at(3,3)
 	method imagen() = "pepita.png"
 
@@ -23,5 +24,9 @@ object pepita {
 	method move(nuevaPosicion) {
 		energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 		self.posicion(nuevaPosicion)
+	}
+	method teEncontro(alguien){
+		self.come(alguien.queTenes())
+		roque.soltar()
 	}	
 }
