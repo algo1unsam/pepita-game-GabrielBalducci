@@ -26,7 +26,9 @@ object pepita {
 		self.posicion(nuevaPosicion)
 	}
 	method teEncontro(alguien){
-		self.come(alguien.queTenes())
-		roque.soltar()
-	}	
+		if (alguien.queTenes() != null){
+			self.come(alguien.queTenes())
+			alguien.soltar()
+		}
+	}
 }
